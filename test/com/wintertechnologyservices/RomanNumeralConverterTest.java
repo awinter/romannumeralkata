@@ -33,11 +33,15 @@ public class RomanNumeralConverterTest {
 
     @Test
     public void convertArabicNumbers12to60 () {
-        assertEquals("XII",  converter.toRoman(12));
-        assertEquals("XIV",  converter.toRoman(14));
-        assertEquals("XVI",  converter.toRoman(16));
-        assertEquals("XX",   converter.toRoman(20));
-        assertEquals("XXX",  converter.toRoman(30));
-        assertEquals("XL",   converter.toRoman(40));
+        assertEquals("XII",    converter.toRoman(12));
+        assertEquals("XIV",    converter.toRoman(14));
+        assertEquals("XVI",    converter.toRoman(16));
+        assertEquals("XX",     converter.toRoman(20));
+        assertEquals("XXX",    converter.toRoman(30));
+        assertEquals("XXXIX",  converter.toRoman(39));
+        assertEquals("XL",     converter.toRoman(40));
+        assertEquals("XLI",    converter.toRoman(41));
+        assertEquals("L",      converter.toRoman(50));
+        assertEquals("LX",     converter.toRoman(60));
     }
 }
