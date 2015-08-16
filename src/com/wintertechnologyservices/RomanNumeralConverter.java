@@ -9,7 +9,19 @@ public class RomanNumeralConverter {
         // Reduce the input number as the output is being constructed
         while (arabicNumber > 0) {
 
-            if (arabicNumber >= 50) {
+            if (arabicNumber >= 500) {
+                numeral.append("D");
+                arabicNumber -= 500;
+            } else if (arabicNumber >= 400 ) {
+                numeral.append("CD");
+                arabicNumber -= 400;
+            } if (arabicNumber >= 100) {
+                numeral.append("C");
+                arabicNumber -= 100;
+            } else if (arabicNumber >= 90 ) {
+                numeral.append("XC");
+                arabicNumber -= 90;
+            } if (arabicNumber >= 50) {
                 numeral.append("L");
                 arabicNumber -= 50;
             } else if (arabicNumber >= 40 ) {

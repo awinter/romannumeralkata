@@ -44,4 +44,14 @@ public class RomanNumeralConverterTest {
         assertEquals("L",      converter.toRoman(50));
         assertEquals("LX",     converter.toRoman(60));
     }
+
+    @Test
+    public void convertArabicNumbers99to600 () {
+        assertEquals("XCIX",   converter.toRoman(99));
+        assertEquals("C",      converter.toRoman(100));
+        assertEquals("CD",     converter.toRoman(400));
+        assertEquals("D",      converter.toRoman(500));
+        assertEquals("DC",     converter.toRoman(600));
+    }
+
 }
