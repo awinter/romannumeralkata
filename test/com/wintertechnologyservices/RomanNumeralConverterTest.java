@@ -23,8 +23,17 @@ public class RomanNumeralConverterTest {
     }
 
     @Test
-    public void convertArabicNumber6 () {
+    public void convertArabicNumbers6 () {
         assertEquals("VI", converter.toRoman(6));
     }
 
+    @Test
+    public void convertArabicNumbers8 () {
+        assertEquals("VIII", converter.toRoman(8));
+    }
+
+    @Test
+    public void convertArabicNumbers9 () {
+        assertEquals("IX", converter.toRoman(9));
+    }
 }
