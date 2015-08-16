@@ -50,3 +50,41 @@ We would like to be able to convert Arabic numbers into their Roman numeral equi
     </tr>
 </table>
 
+## Feature 2 - Converting Roman to Arabic
+
+The change from the Arabic numbering system to using Roman numerals has gone really well, all things considered. There is a slight issue in that sales of the latest games have dropped off, and when questioned people have said it's because they no longer know what the latest version is, as there's no easy to read number. To remedy this, we are going to install Roman numeral to Arabic number converters everywhere we sell games, so people can work out which is the latest game.
+
+### Convert Roman Numeral to Arabic Number
+    As a marketing manager
+    I want customers to be able to convert numerals to numbers
+    So that they can buy the latest version of the game
+        Given I have started the converter
+        When I enter $numeral
+        Then $number is returned
+
+<table>
+    <tr>
+        <th>Numeral</th>
+        <th>Number</th>
+    </tr>
+    <tr>
+        <td>I</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>III</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>IX</td>
+        <td>9</td>
+    </tr>
+    <tr>
+        <td>MLXVI</td>
+        <td>1066</td>
+    </tr>
+    <tr>
+        <td>MCMLXXXIX</td>
+        <td>1989</td>
+    </tr>
+</table>

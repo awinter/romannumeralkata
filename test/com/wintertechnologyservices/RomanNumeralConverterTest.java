@@ -55,12 +55,8 @@ public class RomanNumeralConverterTest {
     }
 
     @Test
-    public void convertArabicNumber1066 () {
-        assertEquals("MLXVI",   converter.toRoman(1066));
-    }
-
-    @Test
-    public void convertArabicNumber1989 () {
+    public void convertArabicNumbersLargeMisc () {
+        assertEquals("MLXVI",       converter.toRoman(1066));
         assertEquals("MCMLXXXIX",   converter.toRoman(1989));
     }
 
