@@ -22,4 +22,9 @@ public class RomanNumeralConverterTest {
         assertEquals("V", converter.toRoman(5));
     }
 
+    @Test
+    public void convertArabicNumber6 () {
+        assertEquals("VI", converter.toRoman(6));
+    }
+
 }
