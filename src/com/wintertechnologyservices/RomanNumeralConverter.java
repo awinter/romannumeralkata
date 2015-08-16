@@ -10,6 +10,8 @@ public class RomanNumeralConverter {
 
     static {
         CONVERSIONS_TO_ROMAN = new LinkedHashMap<Integer, String>();
+        CONVERSIONS_TO_ROMAN.put(1000,"M");
+        CONVERSIONS_TO_ROMAN.put(900,"CM");
         CONVERSIONS_TO_ROMAN.put(500,"D");
         CONVERSIONS_TO_ROMAN.put(400,"CD");
         CONVERSIONS_TO_ROMAN.put(100,"C");
