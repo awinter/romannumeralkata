@@ -12,4 +12,10 @@ public class RomanNumeralConverterTest {
         assertEquals("I", converter.toRoman(1));
     }
 
+    @Test
+    public void convertArabicNumber3 () {
+        RomanNumeralConverter converter = new RomanNumeralConverter();
+        assertEquals("III", converter.toRoman(3));
+    }
+
 }
