@@ -15,7 +15,7 @@ public class RomanNumeralConverter {
 
     // Roman to Arabic Converstion Dictionaries
     private static final Map<String, Integer> CONVERSIONS_TO_ARABIC_SUBTRACTIVE; // eg IV, IX, XL, LC
-    private static final Map<String, Integer> CONVERSIONS_TO_ARABIC_ADDITIVE; // eg I, V, X, C, L
+    private static final Map<Character, Integer> CONVERSIONS_TO_ARABIC_ADDITIVE; // eg I, V, X, C, L
 
     static {
 
@@ -38,14 +38,14 @@ public class RomanNumeralConverter {
         CONVERSIONS_TO_ROMAN = Collections.unmodifiableMap(romanConversionsMap);
 
         // Construct the Roman to Arabic conversion dictionaries from the Arabic to Roman one (just reversing it)
-        Map<String, Integer> arabicConversionsMapAdditive = new LinkedHashMap<String, Integer>();
+        Map<Character, Integer> arabicConversionsMapAdditive = new LinkedHashMap<Character, Integer>();
         Map<String, Integer> arabicConversionsMapSubtractive = new LinkedHashMap<String, Integer>();
         for (Map.Entry<Integer, String> entry : CONVERSIONS_TO_ROMAN.entrySet()) {
             // Intentionally swapping key/value since this a reverse conversion
             if (entry.getValue().length() == 2) {
                 arabicConversionsMapSubtractive.put(entry.getValue(), entry.getKey());
             } else if (entry.getValue().length() == 1) {
-                arabicConversionsMapAdditive.put(entry.getValue(), entry.getKey());
+                arabicConversionsMapAdditive.put(entry.getValue().charAt(0), entry.getKey());
             }
         }
         CONVERSIONS_TO_ARABIC_SUBTRACTIVE = Collections.unmodifiableMap(arabicConversionsMapSubtractive);
@@ -95,17 +95,16 @@ public class RomanNumeralConverter {
                     if (entry.getKey().equals(romanNumeral.substring(i,i+2))) {
                         outputNumber += entry.getValue(); // process the match
                         i++; // advance the counter an extra spot for the extra character since we peeked forward
-                        break; // two character number was found no need to process more
+                        break; // two character numeral was found no need to process more
                     }
                 }
             } else {
-                // Handle additive cases
-                if (charArray[i] == 'I') {
-                    outputNumber += 1;
-                } else if (charArray[i] == 'V') {
-                    outputNumber += 5;
-                } else if (charArray[i] == 'X') {
-                    outputNumber += 10;
+                // Handle the single character cases
+                for (Map.Entry<Character, Integer> entry : CONVERSIONS_TO_ARABIC_ADDITIVE.entrySet()) {
+                    if (entry.getKey().equals(charArray[i])) {
+                        outputNumber += entry.getValue(); // process the match
+                        break; // character numeral was found no need to process more
+                    }
                 }
             }
         }
