@@ -70,17 +70,26 @@ public class RomanNumeralConverter {
 
         for (int i=0; i < charArray.length; i++) {
 
+            // Handle 2 character subtraction cases
             if (i+2 <= romanNumeral.length()) {
                 if (romanNumeral.substring(i,i+2) == "IV") {
                     outputNumber += 4;
                     i++;
                     continue;
+                } else if (romanNumeral.substring(i,i+2) == "IX") {
+                    outputNumber += 9;
+                    i++;
+                    continue;
                 }
             }
+
+            // Handle additive cases
             if (charArray[i] == 'I') {
                 outputNumber += 1;
             } else if (charArray[i] == 'V') {
                 outputNumber += 5;
+            } else if (charArray[i] == 'X') {
+                outputNumber += 10;
             }
         }
 

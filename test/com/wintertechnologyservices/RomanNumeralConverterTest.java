@@ -69,4 +69,12 @@ public class RomanNumeralConverterTest {
         assertEquals(6,    converter.toArabic("VI"));
     }
 
+    @Test
+    public void convertRomanNumeralsVIIItoXI () {
+        assertEquals(8,    converter.toArabic("VIII"));
+        assertEquals(9,    converter.toArabic("IX"));
+        assertEquals(10,   converter.toArabic("X"));
+        assertEquals(11,   converter.toArabic("XI"));
+    }
+
 }
