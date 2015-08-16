@@ -6,13 +6,20 @@ public class RomanNumeralConverter {
     public String toRoman (int arabicNumber) {
         StringBuilder numeral = new StringBuilder();
 
-        if (arabicNumber == 5) {
-            numeral.append("V");
-        } else {
-            // One I for each number
-            for (int i = 0; i < arabicNumber; i++) {
+        // Reduce the input number as the output is being constructed
+        while (arabicNumber > 0) {
+
+            if (arabicNumber == 5) {
+                numeral.append("V");
+                arabicNumber -= 5;
+            } else if (arabicNumber == 4 ) {
+                numeral.append("IV");
+                arabicNumber -= 4;
+            } else if (arabicNumber > 0 ) {
                 numeral.append("I");
+                arabicNumber -= 1;
             }
+
         }
 
         return numeral.toString();

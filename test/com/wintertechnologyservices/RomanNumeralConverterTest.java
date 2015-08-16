@@ -25,6 +25,11 @@ public class RomanNumeralConverterTest {
     }
 
     @Test
+    public void convertArabicNumber4 () {
+        assertEquals("IV", converter.toRoman(4));
+    }
+
+    @Test
     public void convertArabicNumber5 () {
         assertEquals("V", converter.toRoman(5));
     }
