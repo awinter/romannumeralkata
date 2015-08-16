@@ -15,22 +15,11 @@ public class RomanNumeralConverterTest {
     }
 
     @Test
-    public void convertArabicNumber1 () {
+    public void convertArabicNumbers1to5 () {
         assertEquals("I", converter.toRoman(1));
-    }
-
-    @Test
-    public void convertArabicNumber3 () {
         assertEquals("III", converter.toRoman(3));
-    }
-
-    @Test
-    public void convertArabicNumber4 () {
         assertEquals("IV", converter.toRoman(4));
-    }
-
-    @Test
-    public void convertArabicNumber5 () {
         assertEquals("V", converter.toRoman(5));
     }
+
 }
