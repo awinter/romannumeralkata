@@ -9,7 +9,13 @@ public class RomanNumeralConverter {
         // Reduce the input number as the output is being constructed
         while (arabicNumber > 0) {
 
-            if (arabicNumber >= 10) {
+            if (arabicNumber >= 50) {
+                numeral.append("L");
+                arabicNumber -= 50;
+            } else if (arabicNumber >= 40 ) {
+                numeral.append("XL");
+                arabicNumber -= 40;
+            } else if (arabicNumber >= 10) {
                 numeral.append("X");
                 arabicNumber -= 10;
             } else if (arabicNumber >= 9 ) {

@@ -38,5 +38,6 @@ public class RomanNumeralConverterTest {
         assertEquals("XVI",  converter.toRoman(16));
         assertEquals("XX",   converter.toRoman(20));
         assertEquals("XXX",  converter.toRoman(30));
+        assertEquals("XL",   converter.toRoman(40));
     }
 }
