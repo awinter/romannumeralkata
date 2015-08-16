@@ -70,4 +70,8 @@ public class RomanNumeralConverterTest {
         assertEquals(3,    converter.toArabic("III"));
     }
 
+    @Test
+    public void convertRomanNumeralV () {
+        assertEquals(5,    converter.toArabic("V"));
+    }
 }

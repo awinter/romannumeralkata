@@ -67,7 +67,11 @@ public class RomanNumeralConverter {
         int outputNumber = 0;
 
         for (char c : romanNumeral.toCharArray()) {
-            if (c == 'I') outputNumber++;
+            if (c == 'I') {
+                outputNumber += 1;
+            } else if (c == 'V') {
+                outputNumber += 5;
+            }
         }
 
         return outputNumber;
