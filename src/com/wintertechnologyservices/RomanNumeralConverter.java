@@ -64,6 +64,12 @@ public class RomanNumeralConverter {
     }
 
     public int toArabic(String romanNumeral) {
-        return 1;
+        int outputNumber = 0;
+
+        for (char c : romanNumeral.toCharArray()) {
+            if (c == 'I') outputNumber++;
+        }
+
+        return outputNumber;
     }
 }

@@ -65,5 +65,9 @@ public class RomanNumeralConverterTest {
         assertEquals(1,    converter.toArabic("I"));
     }
 
+    @Test
+    public void convertRomanNumeralIII () {
+        assertEquals(3,    converter.toArabic("III"));
+    }
 
 }
