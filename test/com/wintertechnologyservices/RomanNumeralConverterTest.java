@@ -60,4 +60,10 @@ public class RomanNumeralConverterTest {
         assertEquals("MCMLXXXIX",   converter.toRoman(1989));
     }
 
+    @Test
+    public void convertRomanNumeralI () {
+        assertEquals(1,    converter.toArabic("I"));
+    }
+
+
 }

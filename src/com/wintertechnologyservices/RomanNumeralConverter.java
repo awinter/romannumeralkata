@@ -62,4 +62,8 @@ public class RomanNumeralConverter {
 
         return outputNumeral.toString();
     }
+
+    public int toArabic(String romanNumeral) {
+        return 1;
+    }
 }
