@@ -1,12 +1,14 @@
 package com.wintertechnologyservices;
 
+import com.sun.javaws.exceptions.InvalidArgumentException;
+
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * This converter handles the conversion of Arabic Numbers to Roman Numerals.
- * @author Adam Winter <adam.e.winter@gmail.com></adam.e.winter@gmail.com>
+ * This converter handles the conversion of Arabic Numbers to Roman Numerals, as well as the reverse.
+ * @author Adam Winter <adam.e.winter@gmail.com>
  */
 public class RomanNumeralConverter {
 
@@ -59,7 +61,8 @@ public class RomanNumeralConverter {
      */
     public String toRoman (int arabicNumber) {
 
-        if (arabicNumber <= 0) throw new IllegalArgumentException("Supplied Arabic number must be postive.");
+        // Verify the input before processing
+        if (arabicNumber <= 0) throw new IllegalArgumentException("Supplied Arabic number must be positive.");
 
         StringBuilder outputNumeral = new StringBuilder();
 
@@ -81,7 +84,17 @@ public class RomanNumeralConverter {
         return outputNumeral.toString();
     }
 
+    /**
+     * Converts a roman numeral into an arabic number
+     * @param romanNumeral A valid roman numeral. Characters supported are I, V, X, L, C, D, M
+     * @throws IllegalArgumentException if the romanNumeral doesn't appear valid
+     * @return the arabic number equivalent
+     */
     public int toArabic(String romanNumeral) {
+
+        // Verify the input before processing
+        if (!validRomanNumeral(romanNumeral)) throw new IllegalArgumentException("This is not a valid roman numeral");
+
         int outputNumber = 0;
 
         char[] charArray = romanNumeral.toCharArray();
@@ -110,5 +123,25 @@ public class RomanNumeralConverter {
         }
 
         return outputNumber;
+    }
+
+    /**
+     * Basic checks to see if this is a valid roman numeral
+     * @param romanNumeral input numeral
+     * @return if it is valid or not
+     */
+    protected boolean validRomanNumeral (String romanNumeral) {
+        boolean isValid = true;
+        if (romanNumeral.length() == 0) {
+            isValid = false; // cannot convert empty strings
+        } else {
+            for (Character c : romanNumeral.toCharArray()) {
+                // Verify every character is a known roman character
+                if (!CONVERSIONS_TO_ARABIC_ADDITIVE.containsKey(c)) {
+                    isValid = false;
+                }
+            }
+        }
+        return isValid;
     }
 }

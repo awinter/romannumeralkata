@@ -3,6 +3,7 @@ package com.wintertechnologyservices;
 import org.junit.Before;
 import org.junit.Test;
 
+import static junit.framework.Assert.assertTrue;
 import static junit.framework.TestCase.assertEquals;
 
 public class RomanNumeralConverterTest {
@@ -32,4 +33,36 @@ public class RomanNumeralConverterTest {
         assertEquals(1989, converter.toArabic("MCMLXXXIX"));
     }
 
+    @Test
+    public void invalidNegativeNumber () {
+        boolean thrown = false;
+        try {
+            converter.toRoman(-5);
+        } catch (IllegalArgumentException iae) {
+            thrown = true;
+        }
+        assertTrue(thrown);
+    }
+
+    @Test
+    public void invalidBlankString () {
+        boolean thrown = false;
+        try {
+            converter.toArabic("");
+        } catch (IllegalArgumentException iae) {
+            thrown = true;
+        }
+        assertTrue(thrown);
+    }
+
+    @Test
+    public void invalidUnknownRomanDigit () {
+        boolean thrown = false;
+        try {
+            converter.toArabic("Z");
+        } catch (IllegalArgumentException iae) {
+            thrown = true;
+        }
+        assertTrue(thrown);
+    }
 }
