@@ -77,4 +77,13 @@ public class RomanNumeralConverterTest {
         assertEquals(11,   converter.toArabic("XI"));
     }
 
+    @Test
+    public void convertRomanNumeralsDefinedTestCases () {
+        assertEquals(1,    converter.toArabic("I"));
+        assertEquals(3,    converter.toArabic("III"));
+        assertEquals(9,    converter.toArabic("IX"));
+        assertEquals(1066, converter.toArabic("MLXVI"));
+        assertEquals(1989, converter.toArabic("MCMLXXXIX"));
+    }
+
 }

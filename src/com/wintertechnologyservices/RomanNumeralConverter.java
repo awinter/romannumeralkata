@@ -89,7 +89,7 @@ public class RomanNumeralConverter {
         for (int i=0; i < charArray.length; i++) {
 
             // Handle 2 character subtraction cases
-            // Are there two characters left in the string?
+            // Are there two characters left in the string? (NOTE: using the length test to short circuit the substring call)
             if (i+2 <= romanNumeral.length() && CONVERSIONS_TO_ARABIC_SUBTRACTIVE.containsKey(romanNumeral.substring(i,i+2))) {
                 for (Map.Entry<String, Integer> entry : CONVERSIONS_TO_ARABIC_SUBTRACTIVE.entrySet()) {
                     if (entry.getKey().equals(romanNumeral.substring(i,i+2))) {
