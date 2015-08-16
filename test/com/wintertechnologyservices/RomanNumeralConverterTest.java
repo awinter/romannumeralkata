@@ -61,17 +61,12 @@ public class RomanNumeralConverterTest {
     }
 
     @Test
-    public void convertRomanNumeralI () {
+    public void convertRomanNumeralsItoVI () {
         assertEquals(1,    converter.toArabic("I"));
-    }
-
-    @Test
-    public void convertRomanNumeralIII () {
         assertEquals(3,    converter.toArabic("III"));
+        assertEquals(4,    converter.toArabic("IV"));
+        assertEquals(5,    converter.toArabic("V"));
+        assertEquals(6,    converter.toArabic("VI"));
     }
 
-    @Test
-    public void convertRomanNumeralV () {
-        assertEquals(5,    converter.toArabic("V"));
-    }
 }

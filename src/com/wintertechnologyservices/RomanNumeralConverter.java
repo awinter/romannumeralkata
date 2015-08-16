@@ -66,10 +66,20 @@ public class RomanNumeralConverter {
     public int toArabic(String romanNumeral) {
         int outputNumber = 0;
 
-        for (char c : romanNumeral.toCharArray()) {
-            if (c == 'I') {
+        char[] charArray = romanNumeral.toCharArray();
+
+        for (int i=0; i < charArray.length; i++) {
+
+            if (i+2 <= romanNumeral.length()) {
+                if (romanNumeral.substring(i,i+2) == "IV") {
+                    outputNumber += 4;
+                    i++;
+                    continue;
+                }
+            }
+            if (charArray[i] == 'I') {
                 outputNumber += 1;
-            } else if (c == 'V') {
+            } else if (charArray[i] == 'V') {
                 outputNumber += 5;
             }
         }
