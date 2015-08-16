@@ -18,4 +18,9 @@ public class RomanNumeralConverterTest {
         assertEquals("III", converter.toRoman(3));
     }
 
+    @Test
+    public void convertArabicNumber5 () {
+        RomanNumeralConverter converter = new RomanNumeralConverter();
+        assertEquals("V", converter.toRoman(5));
+    }
 }
